@@ -1,0 +1,567 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ineza Divine | IDA Technology Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fc;
+            color: #123456;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px 7%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .logo {
+            color: #007bff;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #1ca330;
+        }
+
+        .tagline {
+            color: #100e0f;
+            font-size: 12px;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        /* NAVIGATION */
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #123456;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #72a4bc;
+        }
+
+        .register-nav {
+            background-color: #007bff;
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 30px;
+        }
+
+        .register-nav:hover {
+            background-color: #39d180;
+        }
+
+        
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: 65px 7%;
+            background: linear-gradient(135deg, #dceeff, #ffffff, #e1f7e8);
+            color: #123456;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 750px;
+            color: #348fb9;
+        }
+
+        .welcome {
+            color: #1ca330;
+            font-size: 19px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            padding: 10px 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.2;
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #007bff;
+        }
+
+        .hero p {
+            max-width: 620px;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 25px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 35px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background-color: #1ca330;
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTIONS */
+        section:not(.hero) {
+            padding: 55px 7%;
+            scroll-margin-top: 30px;
+        }
+
+        .section-title {
+            color: #007bff;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+        }
+
+        .about-photo {
+            width: 250px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 5px solid white;
+            box-shadow: 0 5px 18px #ccd5e2;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 260px;
+            max-width: 650px;
+            background: white;
+            padding: 28px;
+            border-left: 5px solid #1ca330;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #e0e6ef;
+        }
+
+        .about-text h3 {
+            color: #1ca330;
+            margin-bottom: 12px;
+            font-size: 23px;
+        }
+
+        .about-text p {
+            margin-bottom: 13px;
+        }
+
+    
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid #007bff;
+            box-shadow: 0 3px 12px #e0e6ef;
+        }
+
+        .education-card h3 {
+            color: #1ca330;
+            margin-bottom: 12px;
+        }
+
+        
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .skills span {
+            background: #007bff;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 25px;
+        }
+
+        
+        .goals-box {
+            max-width: 850px;
+            margin: auto;
+            background: #eaf2ff;
+            padding: 28px;
+            border-radius: 12px;
+            border-left: 5px solid #1ca330;
+        }
+
+        .goals-box h3 {
+            color: #1746a2;
+            margin-bottom: 10px;
+        }
+
+        .goals-box p {
+            margin-bottom: 12px;
+        }
+
+        
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            background: #eaf2ff;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+
+        
+        footer {
+            padding: 30px 15px;
+            text-align: center;
+            background-color: #320fa5;
+            color: white;
+            border-top: 4px solid #1ca330;
+        }
+
+        footer h3 {
+            color: #18b437;
+            margin-bottom: 8px;
+        }
+
+        .footer-links {
+            margin: 15px 0;
+        }
+
+        .footer-links a {
+            color: rgb(196, 194, 204);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            color: #aebaae;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #111213;
+            padding-top: 15px;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+
+        
+         {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 65vh;
+                padding: 45px 25px;
+            }
+
+            .welcome {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+
+            .about-photo {
+                width: 210px;
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="brand">
+            <div class="logo">
+                IDA <span>Technology</span>
+            </div>
+
+            <div class="tagline">
+                TECHNOLOGY • DISCIPLINE • INNOVATION
+            </div>
+        </div>
+
+        
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#goals">Goals</a>
+            <a href="#contact" class="register-nav">Contact Me</a>
+        </nav>
+    </header>
+
+    
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+
+                <marquee direction="right" scrollamount="5">
+                    <div class="welcome">
+                        WELCOME TO MY PERSONAL PORTFOLIO
+                    </div>
+                </marquee>
+
+                <h1>
+                    Hello, I Am
+                    <span>Ineza Divine</span>
+                </h1>
+
+                <p>
+                    Welcome to my personal portfolio at IDA Technology.
+                    I am passionate about technology, education,
+                    creativity, communication and innovation.
+                    My goal is to use my knowledge and skills to
+                    make a positive difference in society.
+                </p>
+
+                <a href="#about" class="hero-btn">
+                    Discover My Journey &rarr;
+                </a>
+            </div>
+        </section>
+
+        
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about-container">
+
+                
+                <img src="inez.png"
+                     alt="Ineza Divine"
+                     class="about-photo">
+
+                <div class="about-text">
+                    <h3>Who Is Ineza Divine?</h3>
+
+                    <p>
+                        My name is Ineza Divine. I am a student at
+                        IDA Technology who is interested in learning
+                        new technologies and developing useful
+                        solutions for society.
+                    </p>
+
+                    <p>
+                        During my educational journey, I studied in
+                        Catholic educational institutions. These
+                        institutions helped me develop discipline,
+                        respect, responsibility, honesty and good
+                        behavior.
+                    </p>
+
+                    <p>
+                        I also learned the importance of helping
+                        others, working together, respecting different
+                        people and contributing positively to society.
+                    </p>
+
+                    <p>
+                        I believe that education is not only about
+                        gaining knowledge but also about building
+                        good character and becoming a responsible
+                        person.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="education">
+            <h2 class="section-title">My Educational Journey</h2>
+
+            <div class="education-grid">
+
+                <div class="education-card">
+                    <h3>Gatagara</h3>
+                    <p>
+                        I started my educational journey in Primary
+                        Four at Gatagara. This experience helped me
+                        understand the importance of caring for
+                        others, respect, discipline and inclusion
+                        of people with disabilities.
+                    </p>
+                </div>
+
+                <div class="education-card">
+                    <h3>Catholic Education</h3>
+                    <p>
+                        Studying in Catholic institutions helped
+                        me learn discipline, honesty, responsibility,
+                        unity, respect and the value of helping
+                        people in my community.
+                    </p>
+                </div>
+
+                <div class="education-card">
+                    <h3>IDA Technology</h3>
+                    <p>
+                        At IDA Technology, I am developing my
+                        knowledge of computers, web development,
+                        programming and digital innovation to
+                        prepare for future opportunities.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        
+        <section id="skills">
+            <h2 class="section-title">My Skills and Interests</h2>
+
+            <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Computer Skills</span>
+                <span>Communication</span>
+                <span>Teamwork</span>
+                <span>Discipline</span>
+                <span>Innovation</span>
+                <span>Sign Language Awareness</span>
+                <span>Problem Solving</span>
+            </div>
+        </section>
+
+        
+        <section id="goals">
+            <h2 class="section-title">My Goals and Vision</h2>
+
+            <div class="goals-box">
+                <h3>My Vision for the Future</h3>
+
+                <p>
+                    My goal is to improve my technological skills,
+                    continue learning and create useful digital
+                    projects that help solve real problems.
+                </p>
+
+                <p>
+                    I am interested in technology and innovation
+                    that make communication easier and help build
+                    an inclusive society where everyone has equal
+                    opportunities.
+                </p>
+
+                <p>
+                    I want to use the discipline and values I gained
+                    through my education to become a responsible
+                    professional and contribute to my community.
+                </p>
+            </div>
+        </section>
+
+
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+
+            <div class="contact-box">
+                <p>Thank you for visiting my portfolio!</p>
+                <p><strong>Name:</strong> Ineza Divine</p>
+                <p><strong>Institution:</strong> IDA Technology</p>
+                <p><strong>Interests:</strong> Technology and Innovation</p>
+
+                <a href="mailto:your-email@example.com"
+                   class="hero-btn">
+                    Send Me an Email
+                </a>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <h3>INEZA DIVINE</h3>
+
+        <p>IDA Technology Personal Portfolio</p>
+        <p>Technology • Discipline • Innovation • Inclusion</p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ineza Divine. All Rights Reserved.</p>
+            <p>Designed with HTML and Internal CSS.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
